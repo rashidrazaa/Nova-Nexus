@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>College Event Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+
+</head>
+<body class="font-['Inter'] bg-gray-50">
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo"/>
+                    <span class="ml-2 text-lg font-semibold text-gray-900 hidden sm:block">Event Hub</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="#" class="text-custom border-custom border-b-2 px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="#" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-1 pt-1 text-sm font-medium">Events</a>
+                        
+                    </div>
+                    <button class="ml-4 sm:ml-8 rounded-md bg-custom text-white px-3 sm:px-4 py-2 text-sm font-medium hover:bg-opacity-90 transition">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-16">
+        <section id="home" class="relative bg-white hero-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Text content - now in left column -->
+                    <div class="hero-text">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
+                            <span class="block">Welcome to College</span>
+                            <span class="block text-custom">Event Hub</span>
+                        </h1>
+                        <p class="mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl">
+                            The ultimate platform for managing college events. Connect, participate, and organize seamlessly.
+                        </p>
+                        <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-start gap-4 sm:gap-x-6">
+                            <a href="registration/organizerRegister.html" class="rounded-md bg-custom text-white px-6 py-3 text-base font-medium hover:bg-opacity-90 transition hover-raise inline-block">
+                                Join as Organizer
+                            </a>
+                            <a href="registration/participantRegister.html" class="rounded-md bg-white text-custom border-2 border-custom px-6 py-3 text-base font-medium hover:bg-gray-50 transition hover-raise inline-block">
+                                Join as Participant
+                            </a>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Animation container - right column -->
+                    <div class="animation-container flex justify-center items-center">
+                        <div id="animationWrapper" class="w-full max-w-md relative">
+                            <!-- Animation will go here -->
+                            <div id="lottieAnimation" class="w-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Keep your decorative elements -->
+            <div class="absolute top-1/2 left-10 w-12 h-12 rounded-full bg-custom opacity-10 hidden lg:block"></div>
+            <div class="absolute bottom-1/4 right-10 w-24 h-24 rounded-full bg-custom opacity-10 hidden lg:block"></div>
+        </section>
+        
+        <section id="testimonials" class="py-16 sm:py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">What Our Users Say</h2>
+                <div class="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 testimonial-grid">
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden hover-raise">
+                        <div class="p-6 bg-white rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=random" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4"/>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Sarah Johnson</h3>
+                                    <p class="text-sm text-gray-500">Event Organizer</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic">'This platform has revolutionized how we manage college events. The registration process is seamless, and the analytics help us make better decisions.'</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden hover-raise">
+                        <div class="p-6 bg-white rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Mike+Chen&background=random" alt="Mike Chen" class="w-12 h-12 rounded-full mr-4"/>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Mike Chen</h3>
+                                    <p class="text-sm text-gray-500">Student Participant</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic">'I love how easy it is to discover and register for events. The interface is user-friendly, and I never miss out on important campus activities anymore.'</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden hover-raise">
+                        <div class="p-6 bg-white rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Emily+Rodriguez&background=random" alt="Emily Rodriguez" class="w-12 h-12 rounded-full mr-4"/>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Emily Rodriguez</h3>
+                                    <p class="text-sm text-gray-500">Club President</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic">'The platform has helped our club reach more students and streamline event management. The analytics and reporting features are particularly impressive.'</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- New Features Section -->
+        <section id="features" class="py-16 sm:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">Key Features</h2>
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="p-6 bg-gray-50 rounded-lg hover-raise">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-calendar-check text-custom text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Easy Event Management</h3>
+                        <p class="text-gray-600">Create, edit, and manage events with a user-friendly interface. Track registrations and attendance in real-time.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg hover-raise">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-custom text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Detailed Analytics</h3>
+                        <p class="text-gray-600">Get comprehensive insights into event performance with advanced analytics and customizable reports.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg hover-raise">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-users text-custom text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Community Building</h3>
+                        <p class="text-gray-600">Connect with students and build a thriving campus community through engaging events and networking opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="hidden md:ml-6 md:flex md:space-x-8">
+        <a href="#home" class="text-custom border-custom border-b-2 px-1 pt-1 text-sm font-medium">Home</a>
+        <a href="#testimonials" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-1 pt-1 text-sm font-medium">Testimonials</a>
+        <a href="#features" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-1 pt-1 text-sm font-medium">Features</a>
+      </div>
+    
+    <footer class="bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2 md:col-span-1">
+                    <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo"/>
+                    <p class="mt-4 text-sm text-gray-500">Connecting colleges through events.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900">Quick Links</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900">About Us</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900">Events</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900">Support</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900">Help Center</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900">Terms of Service</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900">Connect</h3>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-gray-900 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-900 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-900 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-900 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8">
+                <p class="text-sm text-gray-400 text-center">© 2025 College Event Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Enhanced Organizer Modal with MongoDB Integration -->
+    <div id="organizerModal" class="fixed inset-0 bg-gray-500 bg-opacity-75 overflow-y-auto h-full w-full z-50 hidden modal">
+        <div class="relative top-10 mx-auto p-5 border w-full max-w-md shadow-lg rounded-lg bg-white modal-content">
+            <div class="flex justify-between items-center pb-3">
+                <p class="text-2xl font-bold text-custom">Register as Organizer</p>
+                <button class="modal-close text-gray-400 hover:text-gray-500">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="organizerForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50" required/>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50" required/>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50" required/>
+                    <p class="text-xs text-gray-500 mt-1">Must be at least 8 characters with a number and special character</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Organization Name</label>
+                    <input type="text" name="organization" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50" required/>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Organization Type</label>
+                    <select name="orgType" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50">
+                        <option value="club">Student Club</option>
+                        <option value="department">Department</option>
+                        <option value="society">Society</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="flex flex-col space-y-3">
+                    <button type="submit" id="organizerSubmit" class="rounded-md w-full bg-custom text-white py-2 hover:bg-opacity-90 transition">
+                        <span>Register</span>
+                        <span id="organizerLoader" class="loader ml-2 hidden"></span>
+                    </button>
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                        </div>
+                    </div>
+                    <button type="button" class="rounded-md w-full border border-gray-300 bg-white text-gray-700 py-2 flex items-center justify-center hover:bg-gray-50 transition">
+                        <i class="fab fa-google mr-2"></i> Google
+                    </button>
+                    <button type="button" class="rounded-md w-full border border-gray-300 bg-white text-gray-700 py-2 flex items-center justify-center hover:bg-gray-50 transition">
+                        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Enhanced Participant Modal with MongoDB Integration -->
+    <div id="participantModal" class="fixed inset-0 bg-gray-500 bg-opacity-75 overflow-y-auto h-full w-full z-50 hidden modal">
+        <div class="relative top-10 mx-auto p-5 border w-full max-w-md shadow-lg rounded-lg bg-white modal-content">
+            <div class="flex justify-between items-center pb-3">
+                <p class="text-2xl font-bold text-custom">Register as Participant</p>
+                <button class="modal-close text-gray-400 hover:text-gray-500">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="participantForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50" required/>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50" required/>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50" required/>
+                    <p class="text-xs text-gray-500 mt-1">Must be at least 8 characters with a number and special character</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">College ID</label>
+                    <input type="text" name="collegeId" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50" required/>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Interests</label>
+                    <div class="mt-2 grid grid-cols-2 gap-2">
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="interests" value="academic" class="rounded border-gray-300 text-custom focus:ring-custom"/>
+                            <span class="ml-2 text-sm text-gray-700">Academic</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="interests" value="cultural" class="rounded border-gray-300 text-custom focus:ring-custom"/>
+                            <span class="ml-2 text-sm text-gray-700">Cultural</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="interests" value="sports" class="rounded border-gray-300 text-custom focus:ring-custom"/>
+                            <span class="ml-2 text-sm text-gray-700">Sports</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="interests" value="tech" class="rounded border-gray-300 text-custom focus:ring-custom"/>
+                            <span class="ml-2 text-sm text-gray-700">Tech</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-3">
+                    <button type="submit" id="participantSubmit" class="rounded-md w-full bg-custom text-white py-2 hover:bg-opacity-90 transition">
+                        <span>Register</span>
+                        <span id="participantLoader" class="loader ml-2 hidden"></span>
+                    </button>
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                        </div>
+                    </div>
+                    <button type="button" class="rounded-md w-full border border-gray-300 bg-white text-gray-700 py-2 flex items-center justify-center hover:bg-gray-50 transition">
+                        <i class="fab fa-google mr-2"></i> Google
+                    </button>
+                    <button type="button" class="rounded-md w-full border border-gray-300 bg-white text-gray-700 py-2 flex items-center justify-center hover:bg-gray-50 transition">
+                        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-gray-500 bg-opacity-75 overflow-y-auto h-full w-full z-50 hidden modal">
+        <div class="relative top-20 mx-auto p-5 border w-full max-w-md shadow-lg rounded-lg bg-white modal-content">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                    <i class="fas fa-check text-green-600"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900 mb-2">Registration Successful!</h3>
+                <p class="text-sm text-gray-500 mb-6">Your account has been created successfully. You can now log in to access your dashboard.</p>
+                <button id="successClose" class="rounded-md w-full bg-custom text-white py-2 hover:bg-opacity-90 transition">Continue</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    

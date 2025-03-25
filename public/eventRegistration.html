@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+</head>
+<body class="bg-gray-50 font-[&#39;Inter&#39;]">
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo">
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="border-custom text-custom border-b-2 inline-flex items-center px-1 pt-1 text-sm font-medium">Event Registration</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button onclick="window.location.href='/Participant.html'" class="!rounded-button bg-custom text-white px-4 py-2 text-sm font-medium hover:bg-custom/90">Back to Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white shadow rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Event Registration</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div id="eventDetails" class="bg-gray-50 p-4 rounded-md">
+                    <!-- Event details will be populated here -->
+                </div>
+                <form id="registrationForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" name="name" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-custom focus:border-custom" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" name="email" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-custom focus:border-custom" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" name="phone" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-custom focus:border-custom" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">College/Institution</label>
+                        <input type="text" name="college" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-custom focus:border-custom" required>
+                    </div>
+                    <input type="hidden" id="eventId" name="eventId">
+                    <div class="mt-6">
+                        <button type="submit" class="!rounded-button w-full bg-custom text-white px-4 py-2 text-sm font-medium hover:bg-custom/90">Submit Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get event ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventId = urlParams.get('eventId');
+        document.getElementById('eventId').value = eventId;
+
+        if (!eventId) {
+            document.getElementById('eventDetails').innerHTML = '<div class="text-red-500">No event selected</div>';
+            return;
+        }
+
+        // Fetch event details
+        fetch(`/api/events/${eventId}`)
+            .then(response => response.json())
+            .then(event => {
+                document.getElementById('eventDetails').innerHTML = `
+                    <h3 class="text-xl font-semibold">${event.title}</h3>
+                    <p class="text-gray-600 mt-2">${event.description}</p>
+                    <div class="mt-2">
+                        <span class="text-sm text-gray-500">
+                            <i class="far fa-calendar mr-2"></i>
+                            ${new Date(event.date.start).toLocaleDateString()} - ${new Date(event.date.end).toLocaleDateString()}
+                        </span>
+                    </div>
+                    <div class="mt-1">
+                        <span class="text-sm text-gray-500">
+                            <i class="fas fa-location-dot mr-2"></i>
+                            ${event.venue}
+                        </span>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                console.error('Error fetching event details:', error);
+                document.getElementById('eventDetails').innerHTML = '<div class="text-red-500">Error loading event details</div>';
+            });
+
+        // Handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+
+            try {
+                const response = await fetch('/api/events/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        eventId: formData.get('eventId'),
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone'),
+                        college: formData.get('college')
+                    })
+                });
+
+                if (response.ok) {
+                    alert('Registration successful!');
+                    window.location.href = '/Participant.html';
+                } else {
+                    const error = await response.text();
+                    alert(`Registration failed: ${error}`);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    });
+    </script>
+</body>
+</html> 

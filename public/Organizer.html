@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Events Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet" />
+    <script
+        src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000"
+        data-border-radius="small"></script>
+</head>
+
+<body class="bg-gray-50 font-[&#39;Inter&#39;]">
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png"
+                            alt="Logo" />
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="/Organizer.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Manage
+                            Events</a>
+                        <a href="manageEvent.html"
+                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Create
+                            Event</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button
+                        class="!rounded-button bg-white text-gray-700 px-4 py-2 text-sm font-medium border border-gray-300 hover:bg-gray-50 mr-3">Admin
+                        Panel</button>
+                    <button onclick="window.location.href='/logout'" class="!rounded-button bg-custom text-white px-4 py-2 text-sm font-medium hover:bg-custom/90">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-6 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-900">Event Management Dashboard</h1>
+            <a href="manageEvent.html"><button
+                class="!rounded-button bg-custom text-white px-6 py-2 font-medium hover:bg-custom/90">+ Create New
+                Event</button></a>
+        </div>
+        </div>
+        <div class="mb-8">
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </div>
+                <input type="text"
+                    class="block w-full pl-10 pr-3 py-2 border border-gray-300 !rounded-button bg-white shadow-sm focus:outline-none focus:ring-1 focus:ring-custom focus:border-custom text-sm"
+                    placeholder="Search events by name, type, or status..." />
+            </div>
+        </div>
+        <div class="flex space-x-4 mb-8">
+            <button id="filterAll" class="!rounded-button bg-custom px-4 py-2 text-sm font-medium text-white">All Events</button>
+            <button id="filterInter" class="!rounded-button bg-white border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700">Inter-College</button>
+            <button id="filterIntra" class="!rounded-button bg-white border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700">Intra-College</button>
+        </div>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-12">
+            <!-- Event cards will be loaded here dynamically -->
+            <div class="col-span-3 text-center">
+                <p>Loading events...</p>
+            </div>
+        </div>
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+            <div class="p-6">
+                <h2 class="text-lg font-semibold text-gray-900 mb-6">Event Management Controls</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
+                                <i class="fas fa-check text-green-600"></i>
+                            </span>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-sm font-medium text-gray-900">Manage Tech Fest Registration</h3>
+                            <p class="mt-1 text-sm text-gray-500">12 new registrations pending approval. Click to review
+                                applications and manage event details.</p>
+                            <p class="mt-1 text-xs text-gray-400">2 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
+                                <i class="fas fa-info text-blue-600"></i>
+                            </span>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-sm font-medium text-gray-900">Update Cultural Night Schedule</h3>
+                            <p class="mt-1 text-sm text-gray-500">Schedule modifications needed. 3 time slot conflicts
+                                detected. Click to resolve.</p>
+                            <p class="mt-1 text-xs text-gray-400">5 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-100">
+                                <i class="fas fa-exclamation text-yellow-600"></i>
+                            </span>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-sm font-medium text-gray-900">Hackathon Theme Selection</h3>
+                            <p class="mt-1 text-sm text-gray-500">5 themes proposed. Voting ends in 2 days. Click to
+                                review and select final theme.</p>
+                            <p class="mt-1 text-xs text-gray-400">1 day ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get the current page URL
+        const currentPage = window.location.pathname.split('/').pop();
+
+        // Highlight the active tab based on the current page
+        const manageEventsTab = document.querySelector('a[href="/Organizer.html"]');
+        const createEventTab = document.querySelector('a[href="manageEvent.html"]');
+
+        if (currentPage === 'Organizer.html') {
+            manageEventsTab.classList.add('border-custom', 'text-custom');
+            manageEventsTab.classList.remove('border-transparent', 'text-gray-500');
+        } else if (currentPage === 'manageEvent.html') {
+            createEventTab.classList.add('border-custom', 'text-custom');
+            createEventTab.classList.remove('border-transparent', 'text-gray-500');
+        }
+
+        const eventsContainer = document.querySelector('.grid');
+        const filterAll = document.getElementById('filterAll');
+        const filterInter = document.getElementById('filterInter');
+        const filterIntra = document.getElementById('filterIntra');
+
+        let allEvents = []; // Store all events fetched from the API
+
+        // Function to filter and display events
+        const displayEvents = (filter = 'all') => {
+            const filteredEvents = filter === 'all' ? allEvents : allEvents.filter(event => event.type === filter);
+            eventsContainer.innerHTML = ''; // Clear existing cards
+
+            if (filteredEvents.length === 0) {
+                eventsContainer.innerHTML = '<div class="col-span-3 text-center text-gray-500">No events available.</div>';
+                return;
+            }
+
+            filteredEvents.forEach(event => {
+                const eventCard = `
+                    <div class="bg-white shadow rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-calendar text-custom text-xl mr-3"></i>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">${event.title}</h3>
+                                    <p class="text-sm text-gray-500">${event.type} Event</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="far fa-calendar mr-2"></i>
+                                <span>${new Date(event.date.start).toLocaleDateString()} - ${new Date(event.date.end).toLocaleDateString()}</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="fas fa-location-dot mr-2"></i>
+                                <span>${event.venue}</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <i class="fas fa-users mr-2"></i>
+                                <span>${event.registeredParticipants.length}/${event.maxParticipants} Registered</span>
+                            </div>
+                            <button onclick="showRegistrations('${event._id}')"
+                                class="!rounded-button w-full bg-custom text-white px-4 py-2 text-sm font-medium hover:bg-custom/90">
+                                Manage Registrations
+                            </button>
+                        </div>
+                    </div>
+                `;
+                eventsContainer.innerHTML += eventCard;
+            });
+        };
+
+        // Fetch organizer's events
+        const fetchEvents = async (filter = 'all') => {
+            try {
+                const organizerId = localStorage.getItem('organizerId');
+                const response = await fetch(`/api/organizer/events/${organizerId}`);
+                const events = await response.json();
+                allEvents = events; // Store all events
+                displayEvents(filter); // Display filtered events
+            } catch (error) {
+                console.error('Error fetching events:', error);
+                eventsContainer.innerHTML = '<div class="col-span-3 text-center text-red-500">Error loading events. Check console for details.</div>';
+            }
+        };
+
+        // Initial fetch for all events
+        fetchEvents();
+
+        // Add event listeners to filter buttons
+        filterAll.addEventListener('click', () => {
+            filterAll.classList.add('bg-custom', 'text-white');
+            filterAll.classList.remove('bg-white', 'border', 'text-gray-700');
+            filterInter.classList.remove('bg-custom', 'text-white');
+            filterInter.classList.add('bg-white', 'border', 'text-gray-700');
+            filterIntra.classList.remove('bg-custom', 'text-white');
+            filterIntra.classList.add('bg-white', 'border', 'text-gray-700');
+            fetchEvents('all');
+        });
+
+        filterInter.addEventListener('click', () => {
+            filterInter.classList.add('bg-custom', 'text-white');
+            filterInter.classList.remove('bg-white', 'border', 'text-gray-700');
+            filterAll.classList.remove('bg-custom', 'text-white');
+            filterAll.classList.add('bg-white', 'border', 'text-gray-700');
+            filterIntra.classList.remove('bg-custom', 'text-white');
+            filterIntra.classList.add('bg-white', 'border', 'text-gray-700');
+            fetchEvents('inter');
+        });
+
+        filterIntra.addEventListener('click', () => {
+            filterIntra.classList.add('bg-custom', 'text-white');
+            filterIntra.classList.remove('bg-white', 'border', 'text-gray-700');
+            filterAll.classList.remove('bg-custom', 'text-white');
+            filterAll.classList.add('bg-white', 'border', 'text-gray-700');
+            filterInter.classList.remove('bg-custom', 'text-white');
+            filterInter.classList.add('bg-white', 'border', 'text-gray-700');
+            fetchEvents('intra');
+        });
+    });
+
+    // Function to show registrations modal
+    function showRegistrations(eventId) {
+        // Create modal for registrations
+        const modal = document.createElement('div');
+        modal.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50';
+        modal.innerHTML = `
+            <div class="relative top-20 mx-auto p-5 border w-[90%] max-w-4xl shadow-lg rounded-lg bg-white">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold">Event Registrations</h2>
+                    <button onclick="this.closest('.fixed').remove()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Phone</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">College</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Registration Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="registrationsTable">
+                            <tr>
+                                <td colspan="5" class="px-6 py-4 text-center">Loading registrations...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        // Fetch registrations for this event
+        fetch(`/api/events/${eventId}/registrations`)
+            .then(response => response.json())
+            .then(registrations => {
+                const tbody = document.getElementById('registrationsTable');
+                if (registrations.length === 0) {
+                    tbody.innerHTML = `
+                        <tr>
+                            <td colspan="5" class="px-6 py-4 text-center">No registrations yet</td>
+                        </tr>
+                    `;
+                    return;
+                }
+
+                tbody.innerHTML = registrations.map(reg => `
+                    <tr class="border-b">
+                        <td class="px-6 py-4">${reg.participantName}</td>
+                        <td class="px-6 py-4">${reg.email}</td>
+                        <td class="px-6 py-4">${reg.phone}</td>
+                        <td class="px-6 py-4">${reg.college}</td>
+                        <td class="px-6 py-4">${new Date(reg.registrationDate).toLocaleDateString()}</td>
+                    </tr>
+                `).join('');
+            })
+            .catch(error => console.error('Error:', error));
+    }
+    </script>

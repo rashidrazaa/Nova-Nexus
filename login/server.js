@@ -34,3 +34,50 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
+const events = [
+    {
+        id: 1,
+        title: "Tech Fest 2025",
+        date: "March 30, 2025",
+        time: "10:00 AM",
+        description: "Join us for a day of innovation with tech talks, hackathons, and more!"
+    },
+    {
+        id: 2,
+        title: "Cultural Night",
+        date: "April 5, 2025",
+        time: "6:00 PM",
+        description: "Celebrate diversity with performances, food stalls, and cultural exhibits."
+    },
+    {
+        id: 3,
+        title: "Sports Day",
+        date: "April 10, 2025",
+        time: "8:00 AM",
+        description: "Compete in various sports and win exciting prizes!"
+    }
+];
+
+// Endpoint to fetch events
+app.get('/api/events', (req, res) => {
+    res.json({ success: true, events });
+});
+
+// Add this after the events array and /api/events endpoint
+app.post('/api/create-event', (req, res) => {
+    const { title, date, time, description } = req.body;
+    if (!title || !date || !time || !description) {
+        return res.status(400).json({ success: false, message: 'All fields are required' });
+    }
+
+    const newEvent = {
+        id: events.length + 1,
+        title,
+        date,
+        time,
+        description
+    };
+    events.push(newEvent);
+    res.json({ success: true, event: newEvent });
+});

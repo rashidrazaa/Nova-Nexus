@@ -1,12 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Participant Events</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Participant Dashboard - College Event Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../home.css">
 </head>
-<body>
-    <h1>Participant Events</h1>
-    <p>Welcome, Participant! This page is under construction.</p>
+<body class="font-['Inter'] bg-gray-50">
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-8 w-auto" src="../assets/NN logo.svg" alt="College Event Hub Logo"/>
+                    <span class="ml-2 text-lg font-semibold text-gray-900 hidden sm:block">Event Hub</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="../index.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="../events.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-1 pt-1 text-sm font-medium">Events</a>
+                        <a href="#" class="text-custom border-custom border-b-2 px-1 pt-1 text-sm font-medium">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+        <section class="py-16 sm:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 sm:mb-12">Participant Dashboard</h1>
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Browse Events</h2>
+                <div id="eventsList" class="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Events will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <p class="text-sm text-gray-400 text-center">© 2025 Nova Nexus Event Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                const response = await fetch('http://localhost:3000/api/events');
+                const result = await response.json();
+
+                if (result.success) {
+                    const eventsList = document.getElementById('eventsList');
+                    eventsList.innerHTML = '';
+
+                    result.events.forEach(event => {
+                        const eventCard = `
+                            <div class="bg-gray-50 rounded-lg shadow-sm overflow-hidden hover-raise">
+                                <div class="p-6">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">${event.title}</h3>
+                                    <p class="text-sm text-gray-500 mb-2">${event.date} | ${event.time}</p>
+                                    <p class="text-gray-600 mb-4">${event.description}</p>
+                                    <button class="rounded-md bg-custom text-white px-4 py-2 text-sm font-medium hover:bg-opacity-90 transition">Register</button>
+                                </div>
+                            </div>
+                        `;
+                        eventsList.innerHTML += eventCard;
+                    });
+                } else {
+                    alert('Failed to load events');
+                }
+            } catch (error) {
+                console.error('Error fetching events:', error);
+                alert('An error occurred while loading events');
+            }
+        });
+    </script>
 </body>
 </html>

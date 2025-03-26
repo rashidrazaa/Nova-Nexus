@@ -7,54 +7,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+
 </head>
 <body class="font-['Inter'] bg-gray-50">
     <nav class="bg-white shadow-sm fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo"/>
+                    <img class="h-8 w-auto" src="NN logo.svg" alt="Logo"/>
                     <span class="ml-2 text-lg font-semibold text-gray-900 hidden sm:block">Event Hub</span>
                 </div>
                 <div class="flex items-center">
                     <div class="hidden md:ml-6 md:flex md:space-x-8">
                         <a href="#" class="text-custom border-custom border-b-2 px-1 pt-1 text-sm font-medium">Home</a>
-                        <a href="#" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-1 pt-1 text-sm font-medium">Events</a>
+                        <a href="events.html" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-1 pt-1 text-sm font-medium">Events</a>
+                        <a href="login.html" class="ml-4 sm:ml-8 rounded-md bg-custom text-white px-3 sm:px-4 py-2 text-sm font-medium hover:bg-opacity-90 transition">Login</a>
                         
                     </div>
-                    <a href="login.html"><button class="ml-4 sm:ml-8 rounded-md bg-custom text-white px-3 sm:px-4 py-2 text-sm font-medium hover:bg-opacity-90 transition">Login</button></a>
+
                 </div>
             </div>
         </div>
     </nav>
     <main class="pt-16">
-        <section class="relative bg-white hero-section">
+        <section id="home" class="relative bg-white hero-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32">
-                <div class="text-center hero-text">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
-                        <span class="block">Welcome to College</span>
-                        <span class="block text-custom">Event Hub</span>
-                    </h1>
-                    <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                        The ultimate platform for managing college events. Connect, participate, and organize seamlessly.
-                    </p>
-                    <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center gap-4 sm:gap-x-6">
-                        <a href="OrgSignup.html"><button id="organizerBtn" class="rounded-md bg-custom text-white px-6 py-3 text-base font-medium hover:bg-opacity-90 transition hover-raise">
-                            Join as Organizer
-                        </button></a>
-                        <a href="PartSignup.html"><button id="participantBtn" class="rounded-md bg-white text-custom border-2 border-custom px-6 py-3 text-base font-medium hover:bg-gray-50 transition hover-raise">
-                            Join as Participant
-                        </button></a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Text content - now in left column -->
+                    <div class="hero-text">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
+                            <span class="block">Welcome to Nova Nexus</span>
+                            <span class="block text-custom">Event Hub</span>
+                        </h1>
+                        <p class="mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl">
+                            The ultimate platform for managing college events. Connect, participate, and organize seamlessly.
+                        </p>
+                        <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-start gap-4 sm:gap-x-6">
+                            <a href="OrgLogin.html" class="rounded-md bg-custom text-white px-6 py-3 text-base font-medium hover:bg-opacity-90 transition hover-raise inline-block">
+                                Join as Organizer
+                            </a>
+                            <a href="PartLogin.html" class="rounded-md bg-white text-custom border-2 border-custom px-6 py-3 text-base font-medium hover:bg-gray-50 transition hover-raise inline-block">
+                                Join as Participant
+                            </a>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Animation container - right column -->
+                    <div class="animation-container flex justify-center items-center">
+                        <div id="animationWrapper" class="w-full max-w-md relative">
+                            <!-- Animation will go here -->
+                            <div id="lottieAnimation" class="w-full"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Decorative elements -->
+            <!-- Keep your decorative elements -->
             <div class="absolute top-1/2 left-10 w-12 h-12 rounded-full bg-custom opacity-10 hidden lg:block"></div>
             <div class="absolute bottom-1/4 right-10 w-24 h-24 rounded-full bg-custom opacity-10 hidden lg:block"></div>
         </section>
         
-        <section class="py-16 sm:py-20 bg-gray-50">
+        <section id="testimonials" class="py-16 sm:py-20 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">What Our Users Say</h2>
                 <div class="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 testimonial-grid">
@@ -126,7 +141,7 @@
         </section>
         
         <!-- New Features Section -->
-        <section class="py-16 sm:py-20 bg-white">
+        <section id="features" class="py-16 sm:py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">Key Features</h2>
                 <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -155,12 +170,17 @@
             </div>
         </section>
     </main>
+    <div class="hidden md:ml-6 md:flex md:space-x-8">
+        <a href="#home" class="text-custom border-custom border-b-2 px-1 pt-1 text-sm font-medium">Home</a>
+        <a href="#testimonials" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-1 pt-1 text-sm font-medium">Testimonials</a>
+        <a href="#features" class="text-gray-500 hover:border-gray-300 hover:text-gray-700 px-1 pt-1 text-sm font-medium">Features</a>
+      </div>
     
     <footer class="bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="col-span-2 md:col-span-1">
-                    <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo"/>
+                    <img class="h-8 w-auto" src="NN logo.svg" alt="Logo"/>
                     <p class="mt-4 text-sm text-gray-500">Connecting colleges through events.</p>
                 </div>
                 <div>
@@ -198,7 +218,7 @@
                 </div>
             </div>
             <div class="mt-8 border-t border-gray-200 pt-8">
-                <p class="text-sm text-gray-400 text-center">© 2025 College Event Hub. All rights reserved.</p>
+                <p class="text-sm text-gray-400 text-center">© 2025 Nova Nexus Event Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -286,11 +306,11 @@
                     <input type="password" name="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50" required/>
                     <p class="text-xs text-gray-500 mt-1">Must be at least 8 characters with a number and special character</p>
                 </div>
-    <div>
+                <div>
                     <label class="block text-sm font-medium text-gray-700">College ID</label>
                     <input type="text" name="collegeId" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom focus:ring focus:ring-custom focus:ring-opacity-50" required/>
                 </div>
-    <div>
+                <div>
                     <label class="block text-sm font-medium text-gray-700">Interests</label>
                     <div class="mt-2 grid grid-cols-2 gap-2">
                         <label class="inline-flex items-center">

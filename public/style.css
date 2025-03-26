@@ -64,22 +64,22 @@ h2 {
 }
 
 .btn-organizer {
-    background: #667eea;
+    background: #4f46e5;
     color: white;
 }
 
 .btn-organizer:hover {
-    background: #5a6fd1;
+    background: #4f46e5;
     transform: translateY(-2px);
 }
 
 .btn-participant {
-    background: #764ba2;
+    background: #4f46e5;
     color: white;
 }
 
 .btn-participant:hover {
-    background: #6a4399;
+    background: #4f46e5;
     transform: translateY(-2px);
 }
 
@@ -119,12 +119,12 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #4f46e5;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 input[type="submit"] {
-    background: #667eea;
+    background: #4f46e5;
     color: white;
     font-weight: 600;
     cursor: pointer;
@@ -136,7 +136,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background: #5a6fd1;
+    background: #4f46e5;
     transform: translateY(-2px);
 }
 
@@ -146,7 +146,7 @@ input[type="submit"]:hover {
 }
 
 .signup-link a {
-    color: #667eea;
+    color: #4f46e5;
     text-decoration: none;
     font-weight: 600;
 }
@@ -201,7 +201,7 @@ input[type="submit"]:hover {
 }
 
 .organizer-btn {
-    background-color: var(--custom-color, #000);
+    background-color: var(--custom-color, #000000);
     color: white;
 }
 
@@ -210,12 +210,12 @@ input[type="submit"]:hover {
 }
 
 .participant-btn {
-    background-color: #9333ea;
+    background-color: var(--custom-color, #5374bb);
     color: white;
 }
 
 .participant-btn:hover {
-    background-color: #7e22ce;
+    background-color: #020203;
 }
 
 /* Styles for authentication forms - Used in OrgLogin.html, OrgSignup.html, PartLogin.html, PartSignup.html */
@@ -281,17 +281,17 @@ input[type="submit"]:hover {
 
 /* Participant-specific styles - Used in PartLogin.html and PartSignup.html */
 .participant-btn {
-    background-color: #9333ea;
+    background-color: #4f46e5;
     color: white;
 }
 
 .participant-btn:hover {
-    background-color: #7e22ce;
+    background-color: #14b9ff;
 }
 
 /* For participant pages, override link colors */
 .login-box form.participant .auth-link a {
-    color: #9333ea;
+    color: #4f46e5;
 }
 
 /* Styles for home.html - Dashboard page */
@@ -326,7 +326,7 @@ input[type="submit"]:hover {
 }
 
 .logo i {
-    color: #9333ea;
+    color: #4f46e5;
 }
 
 .nav-links {
@@ -342,7 +342,7 @@ input[type="submit"]:hover {
 }
 
 .nav-link:hover {
-    color: #9333ea;
+    color: #4f46e5;
 }
 
 .main-content {
@@ -383,11 +383,11 @@ input[type="submit"]:hover {
     transition: all 0.3s ease;
 }
 .cta-btn.primary {
-    background-color: #9333ea;
+    background-color: #4f46e5;
     color: white;
 }
 .cta-btn.primary:hover {
-    background-color: #7e22ce;
+    background-color: #4f46e5;
 }
 .cta-btn.secondary {
     background-color: #e5e7eb;
@@ -426,7 +426,7 @@ input[type="submit"]:hover {
 }
 .feature-card i {
     font-size: 2rem;
-    color: #9333ea;
+    color: #4f46e5;
     margin-bottom: 1rem;
 }
 .feature-card h3 {
@@ -494,7 +494,7 @@ input[type="submit"]:hover {
     font-weight: 700;
 }
 .nav-brand i {
-    color: #9333ea;
+    color: #4f46e5;
 }
 .nav-menu {
     display: flex;
@@ -508,7 +508,7 @@ input[type="submit"]:hover {
     transition: color 0.3s ease;
 }
 .nav-menu a:hover, .nav-menu a.active {
-    color: #9333ea;
+    color: #4f46e5;
 }
 .home-content {
     display: flex;
@@ -547,20 +547,20 @@ input[type="submit"]:hover {
     transition: all 0.3s ease;
 }
 .home-btn.organizer {
-    background-color: #9333ea;
+    background-color: #4f46e5;
     color: white;
 }
 .home-btn.organizer:hover {
-    background-color: #7e22ce;
+    background-color: #5a6fd1;
     transform: translateY(-2px);
 }
 .home-btn.participant {
     background-color: white;
-    color: #9333ea;
-    border: 2px solid #9333ea;
+    color: #4f46e5;
+    border: 2px solid #4f46e5;
 }
 .home-btn.participant:hover {
-    background-color: #9333ea;
+    background-color: #4f46e5;
     color: white;
     transform: translateY(-2px);
 }
@@ -619,4 +619,8 @@ input[type="submit"]:hover {
     color: #6b7280;
     text-transform: uppercase;
     font-size: 0.75rem;
+}
+.bg-custom {
+    background-color: #4f46e5;
+    color: white;
 }
